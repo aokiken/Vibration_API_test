@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vibration API</title>
+  <script>
+    function startVibration() {
+      if (!navigator.vibrate) {
+        alert("Vibration API is not supported on this device.");
+        return;
+      }
+      navigator.vibrate(Array(120).fill(5000));
+    }
+
+    function stopVibration() {
+      navigator.vibrate(0);
+    }
+  </script>
+</head>
+<body>
+  <h1>Vibration API DEMO</h1>
+  <button onclick="startVibration()">Start Vibration</button>
+  <button onclick="stopVibration()">Stop Vibration</button>
+</body>
+</html>
